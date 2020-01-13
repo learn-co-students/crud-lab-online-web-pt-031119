@@ -3,18 +3,21 @@ import React, { Component } from 'react';
 class Review extends Component {
 
   render() {
-    const { review } = this.props
-
+    const review = this.props
+    debugger
     return (
       <div>
         <li>
-          {review.text}
+          {review.review.text}
+        <button onClick={() => review.delete(review.review.id)}> X </button>
         </li>
-        <button> X </button>
       </div>
-    );
+    )} 
+    // else {
+    //   return <div></div>
+    // }
   }
 
-};
+
 
 export default Review;
