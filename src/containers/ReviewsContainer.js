@@ -10,7 +10,7 @@ class ReviewsContainer extends Component {
     return (
       <div>
         <ReviewInput restaurantId={this.props.restaurant.id} addReview={this.props.addReview}/>
-        <Reviews reviews={this.props.reviews} restaurant={this.props.restaurant}/>
+        <Reviews reviews={this.props.reviews} restaurant={this.props.restaurant} deleteReview={this.props.deleteReview}/>
       </div>
     )
   }
@@ -19,8 +19,14 @@ class ReviewsContainer extends Component {
 const addReview = (restaurantId, text) => {
   return {
     type: 'ADD_REVIEW',
-    restaurantId: restaurantId,
-    text:text
+    review: {text, restaurantId} 
+  }
+}
+
+const deleteReview = (id) => {
+  return {
+    type: 'DELETE_REVIEW',
+    id
   }
 }
 
@@ -30,4 +36,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {addReview})(ReviewsContainer)
+export default connect(mapStateToProps, {addReview, deleteReview})(ReviewsContainer)

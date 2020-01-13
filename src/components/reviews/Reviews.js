@@ -10,7 +10,8 @@ class Reviews extends Component {
     if (list.reviews){
     return <ul>{list.reviews.map(r => {
       if(r.restaurantId === list.restaurant.id){
-      return <li><Review review={r}/></li> 
+        // console.log(`reviews check ${list.restaurant.id}`)
+      return <li><Review review={r} delete={this.props.deleteReview}/></li> 
     }})}</ul>
 
   }else {

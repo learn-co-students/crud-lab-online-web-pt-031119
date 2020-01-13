@@ -5,10 +5,11 @@ class Restaurants extends Component {
 
   showRestaurants = () => {
     const list = this.props
+    if(list.restaurants){
     return <ul> {list.restaurants.map(r => {
       // debugger
       return <li><Restaurant restaurant={r} delete={list.deleteRestaurant}/></li>
-    })} </ul>
+    })} </ul>}
   }
 
   render() {
