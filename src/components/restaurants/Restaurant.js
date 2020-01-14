@@ -4,6 +4,12 @@ import ReviewsContainer from '../../containers/ReviewsContainer'
 class Restaurant extends Component {
 
 
+  handleOnClick = () => {
+    debugger
+    // event.preventDefault();
+    this.props.deleteRestaurant(this.props.restaurant.id)
+  }
+
   render() {
     debugger
     const { restaurant, deleteRestaurant } = this.props;
@@ -13,10 +19,9 @@ class Restaurant extends Component {
 
       <div>
           <li>
-            {this.props.restaurant.text}
-            {console.log(this.props)}
-            <button onClick={() => this.props.deleteRestaurant(this.props.restaurant.id)}>DELETE</button>
-            <ReviewsContainer restaurant={this.props.restaurant} />
+            {restaurant.text}
+            <button onClick={() => this.handleOnClick()}>DELETE</button>
+            <ReviewsContainer restaurant={restaurant} />
           </li>
       </div>
 
