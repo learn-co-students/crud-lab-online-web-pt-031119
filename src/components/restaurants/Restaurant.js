@@ -5,13 +5,11 @@ class Restaurant extends Component {
 
 
   handleOnClick = () => {
-    debugger
-    // event.preventDefault();
     this.props.deleteRestaurant(this.props.restaurant.id)
   }
 
   render() {
-    debugger
+
     const { restaurant, deleteRestaurant } = this.props;
 
     return (
