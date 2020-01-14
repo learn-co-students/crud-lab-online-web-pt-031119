@@ -14,9 +14,9 @@ class RestaurantInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addBand(this.state.text)
+    this.props.addRestaurant(this.state.text)
     this.setState({
-      text: '',
+      text: ''
     })
   }
 
@@ -25,9 +25,9 @@ class RestaurantInput extends Component {
     return (
       <div>
         Restaurant Input
-        <form>
+        <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <input name="restaurant" onChange={(event) => this.handleOnChange(event)} />
-          <button onSubmit={(event) => this.handleOnSubmit(event)} name="restaurant submission" type="submit" content="submit" />
+          <button name="restaurant submission" type="submit"/>
         </form>
       </div>
     );
