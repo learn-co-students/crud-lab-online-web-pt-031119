@@ -7,7 +7,7 @@ class ReviewsContainer extends Component {
 
   render() {
 
-      const { addReview, deleteReview } = this.props
+      // const { addReview, deleteReview } = this.props
 
     return (
       <div>
