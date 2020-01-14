@@ -30,6 +30,7 @@ export default function manageRestaurants(state = {
     }
 
     case 'ADD_REVIEW':
+    debugger
     console.log("add review reducer", action)
 
     return {reviews: state.reviews.concat(review)}
