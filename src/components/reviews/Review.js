@@ -8,7 +8,7 @@ class Review extends Component {
     return (
       <div>
         <li>
-          {review.text}
+        
         </li>
         <button> X </button>
       </div>

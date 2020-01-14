@@ -9,7 +9,6 @@ export default function manageRestaurants(state = {
   switch (action.type) {
 
     case 'ADD_RESTAURANT':
-    console.log("add restaurant reducer", action)
 
 
     const restaurant = {
@@ -20,12 +19,32 @@ export default function manageRestaurants(state = {
     return {restaurants: state.restaurants.concat(restaurant)}
 
     case 'DELETE_RESTAURANT':
-    console.log("delete restaurant", action)
 
-    return {restaurants: state.restaurants.filter(restaurant => restaurant.id !== action.id)}
+    const restaurants = state.restaurants.filter(restaurant => restaurant.id !== action.id)
+
+    return {...state, restaurants}
+
+
+    const review = {
+      text: action.text,
+      id: cuid(),
+      restaurant_id: restaurant.id
+    }
+
+    case 'ADD_REVIEW':
+    console.log("add review reducer", action)
+
+    return {reviews: state.reviews.concat(review)}
+
+    case 'DELETE_REVIEW':
+    console.log("delete review reducer", action)
+
+    return {reviews: state.restaurants.reviews.filter(review => review.id !== action.id && review.restaurant_id !== action.id)}
 
     default:
       return state
 
   }
 }
+
+//add actions for reviews
