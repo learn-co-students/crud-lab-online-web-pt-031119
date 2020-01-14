@@ -5,9 +5,6 @@ import { connect } from 'react-redux'
 
 class ReviewsContainer extends Component {
 
-  // const { restaurant } = this.props
-
-
   render() {
 
       const { addReview, deleteReview } = this.props
@@ -29,8 +26,3 @@ const mapDispatchToProps = dispatch => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewsContainer)
-
-
-//mapDispatchToProps
-//addReview, deleteReview
-//mapStateToProps
