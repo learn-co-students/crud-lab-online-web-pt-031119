@@ -13,8 +13,13 @@ export default function manageRestaurants(state={restaurants:[],reviews:[]}, act
       return {...state,restaurants}
 
     case 'ADD_REVIEW':
-      let review = {text: action.text, restaurantId: action.restaurantId, id: cuid()}
+      let review = {text: action.review.text, restaurantId: action.review.restaurantId, id: cuid()}
       return{...state,reviews:[...state.reviews,review]}
+
+    case 'DELETE_REVIEW':
+      console.log(action)
+      let reviews = state.reviews.filter(review => review.id !== action.id)
+      return {...state,reviews}
 
     default:
       return state
