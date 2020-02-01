@@ -9,7 +9,7 @@ export default function manageRestaurants(state = {
             case 'ADD_RESTAURANT':
             
                 const restaurant = {text: action.text, id: cuidFn()};
-                debugger
+                
                 return { 
                     ...state, 
                     restaurants: [...state.restaurants, restaurant]
